@@ -6,7 +6,7 @@ namespace task_1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ojelma selvittää onko annettu luku " +
+            Console.WriteLine("Ohjelma selvittää onko annettu luku " +
                 "positivinen " +
                 "negatiivinen vai nolla ");
             Console.WriteLine("Syötä luku");
