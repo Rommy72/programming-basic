@@ -6,29 +6,24 @@ namespace looptask_3_2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ohjelma laskee annetun luvun summan");
-            int number = 0;
-            int i = 0;
+            Console.WriteLine("Ohjelma laskee luvun yhteen myös negatiivisilla numeroilla.");
+            Console.Write("Syötä luku: ");      
+            string userInput = Console.ReadLine();
+            bool isNumber = int.TryParse(userInput, out int number);   
             int sum = 0;
-            do
+
+            if (isNumber)      
             {
-                Console.Write("syötä luku: ");
-                number = int.Parse(Console.ReadLine());
-
-                if (number <= 0)
-                    Console.WriteLine("Virheellinen syöte!");
-
-
-
-            } while (number <= 0);
-
-            while (i <= number)
-            {
-                sum = sum + i;
-                i = i + 1;
+                if (number > 0)         
+                    for (int i = 0; i <= number; i++)
+                        sum = sum + i;
+                else                    
+                    for (int i = 0; i >= number; i--)
+                        sum = sum + i;
+                Console.WriteLine($"Vastaus: {sum}");
             }
-            Console.WriteLine($"Luvun{number}! = {sum}");
-
+            else
+                Console.WriteLine("syöte ei kelpaa");
         }
     }
 }
